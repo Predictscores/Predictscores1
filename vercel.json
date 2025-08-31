@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "crons": [
+    { "path": "/api/cron/rebuild?slot=am",   "schedule": "0 8 * * *"  },
+    { "path": "/api/cron/rebuild?slot=pm",   "schedule": "0 13 * * *" },
+    { "path": "/api/cron/rebuild?slot=late", "schedule": "0 22 * * *" },
+    { "path": "/api/cron/apply-learning",    "schedule": "15 8,13,22 * * *" },
+    { "path": "/api/history-settle",         "schedule": "30 0,12 * * *" }
+  ]
+}
